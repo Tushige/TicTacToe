@@ -61,3 +61,26 @@ header h1 {
     /*prevent span from repositioning when text changes*/
     overflow:hidden;
 }
+.score_container {
+    background:blue;
+    text-align:center;
+}
+.score {
+    background:red;
+    color:white;
+    margin: 0 auto;
+    font-size:30px;
+    font-family:Bitter, Monospace;
+}
+.score2 {
+    background:green;
+    color:white;
+    margin: 0 auto;
+    font-size:30px;
+    font-family:Bitter, Monospace;
+}
+.score span, .score2 span {
+    width:100%;
+    margin:auto;
+    float:right;
+}
