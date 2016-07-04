@@ -43,7 +43,7 @@ header h1 {
     color: white;
 }
 /*individual cells
- * saetting overflow:hidden fixed the positioning problem
+ * saetting overflow:hidden fixed the positioning problem when text is added to cells
  */
 .cell {
     display:inline-block;
@@ -61,26 +61,45 @@ header h1 {
     /*prevent span from repositioning when text changes*/
     overflow:hidden;
 }
-.score_container {
-    background:blue;
+/* Score stuff*/
+#container_score {
+  width:600px;
+  margin:50px auto;
+  text-align:center;
+  border-style:solid;
+  border-width: 5px;
+  border-color:#2cca12;
+  border-radius:5px;
+}
+#player_score_container, #AI_score_container, #tie_score_container {
+    float:left;
+    width:33%;
+    color:white;
+    font-size:30px;
     text-align:center;
-}
-.score {
-    background:red;
-    color:white;
-    margin: 0 auto;
-    font-size:30px;
     font-family:Bitter, Monospace;
 }
-.score2 {
-    background:green;
-    color:white;
-    margin: 0 auto;
-    font-size:30px;
-    font-family:Bitter, Monospace;
-}
-.score span, .score2 span {
+#player_score, #AI_score, #tie_score{
     width:100%;
-    margin:auto;
     float:right;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
