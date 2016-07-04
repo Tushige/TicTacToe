@@ -78,7 +78,6 @@ $(document).ready(function() {
                     player.innerText = "Player";
                     AI.innerText = "AI";
                     //reset game Variables
-                    inGame = false;
                     mark.player = "";
                     mark.AI = "";
                     playerTurn = 0;
@@ -96,6 +95,9 @@ $(document).ready(function() {
     // do clean up for next game
     function gameOverHandler(winner) {
         var scoreTemp;
+
+        inGame = false;
+
         //if there is a winner
         if(winner != "no one") {
             //player won!
@@ -137,14 +139,14 @@ $(document).ready(function() {
             gameOverHandler("no one");  
         }
     }
-    
+
     //setup the window that asks the user_pick to choose 'X' vs 'O'
     function setupStartWidget() {
         console.log("114")
         playDlg.dialog({
         autoOpen: false,
         hide: "puff",
-        show : "slide",
+        show : "fold",
         height: 200,
         modal: true,
         title: "MAKE YOUR CHOICE!",

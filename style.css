@@ -31,35 +31,31 @@ header h1 {
 #opener-btn:hover{
   background: #7a2d24;
 }
-/* UI window stuff*/
 
 /*box containing cells*/
 .game-cub {
-    width:400px;
+    width:300px;
+    height:300px;
     margin:auto;
     margin-top:60px;
-    text-align:center;
     padding:0;
-    color: white;
+    text-align:center;
 }
-/*individual cells
- * saetting overflow:hidden fixed the positioning problem when text is added to cells
- */
+/*individual cells*/
 .cell {
-    display:inline-block;
+    display:block;
+    float:left;
     font-size: 50px;
     width:100px;
     height:100px;
     /*vertically align text*/
     line-height: 100px;
     border-width:1px;
-    border-style:solid;
+    border-style: dashed;
     /*color of text*/
     color:#cd5547;
     border-color:white;
     cursor: pointer;
-    /*prevent span from repositioning when text changes*/
-    overflow:hidden;
 }
 /* Score stuff*/
 #container_score {
