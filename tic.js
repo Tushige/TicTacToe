@@ -16,7 +16,7 @@ $(document).ready(function() {
     * false: game not in progress
     */
     var inGame = false;
-
+    var gameOver = false;
     //DOM elements
     var playDlg = $("#playDialog");
     var winnerDlg = $("#winnerDialog");
@@ -63,6 +63,7 @@ $(document).ready(function() {
     /*display winner and get ready for next game*/
     function setupEndWidget(winner) {
         winnerDlg.dialog({
+            dialogClass: "no-close",
             autoOpen: true,
             hide: "puff",
             show: "slide",
@@ -80,6 +81,7 @@ $(document).ready(function() {
                     //reset game Variables
                     mark.player = "";
                     mark.AI = "";
+                    inGame = false;
                     playerTurn = 0;
                     move_counter = 0;
                     $(this).dialog("close");
@@ -96,7 +98,7 @@ $(document).ready(function() {
     function gameOverHandler(winner) {
         var scoreTemp;
 
-        inGame = false;
+        gameOver = true;
 
         //if there is a winner
         if(winner != "no one") {
@@ -157,6 +159,7 @@ $(document).ready(function() {
                   player.innerText += "(O)";
                   AI.innerText += "(X)";
                   inGame = true;
+                  gameOver = false;
                   move_counter = 0;
                   AIMove();
                   $(this).dialog("close");
@@ -167,6 +170,7 @@ $(document).ready(function() {
                   player.innerText += "(X)";
                   AI.innerText += "(O)";
                   inGame = true;
+                  gameOver = false;
                   move_counter = 0;
                   AIMove();
                   $(this).dialog("close");
@@ -188,7 +192,7 @@ $(document).ready(function() {
 
         /*when user_pick makes a move*/
         cells.click(function() {
-            if(inGame && playerTurn===1) {
+            if(inGame && playerTurn===1 && gameOver==false) {
                 if(this.textContent === "") {
                     //make move and end turn
                     this.textContent = mark.player;

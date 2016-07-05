@@ -31,7 +31,9 @@ header h1 {
 #opener-btn:hover{
   background: #7a2d24;
 }
-
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
 /*box containing cells*/
 .game-cub {
     width:300px;
